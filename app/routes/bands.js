@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import Band from '../models/band';
-import Song from '../models/song'
+import Song from '../models/song';
 
 //create the songs
 var daughter = Song.create({
@@ -67,5 +67,16 @@ bands.pushObjects([ledZappelin, pearlJam, fooFighters]);
 export default Ember.Route.extend({
   model: function() {
     return bands;
+  },
+
+  actions: {
+    createBand: function() {
+      var name = this.get('controller').get('name');
+      var band = Band.create({
+        name: name
+      });
+      bands.pushObject(band);
+      this.get('controller').set('name', '');
+    }
   }
 });
