@@ -1,12 +1,8 @@
 import Ember from 'ember';
+import Band from '../models/band';
+import Song from '../models/song'
 
 //create the songs
-var Song = Ember.Object.extend({
-  title:  '',
-  band:   '',
-  rating: 0
-});
-
 var daughter = Song.create({
   title: 'Daughter',
   band:  'Pearl Jam',
@@ -42,13 +38,6 @@ var pretender = Song.create({
 // songs.pushObjects([daughter, blackDog, yellowLedbetter, pretender]);
 
 //create the bands
-var Band = Ember.Object.extend({
-  name: '',
-
-  slug: function(){
-    return this.get('name').dasherize();
-  }.property('name')
-});
 
 var ledZappelin = Band.create({
   name: 'Led Zappelin',
