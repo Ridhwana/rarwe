@@ -8,6 +8,13 @@
     {{#each model as |song|}}
       <li class="list-group-item">
         {{song.title}}
+        
+        {{star-rating
+          item=song
+          rating=song.rating
+          setAction="updateRating"
+        }}
+        
         <span class="rating pull-right">{{song.rating}}</span>
       </li>
     {{/each}}
