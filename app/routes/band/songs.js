@@ -21,7 +21,6 @@ export default Ember.Route.extend({
     updateRating: function(params) {
       var song = params.item,
       rating = params.rating;
-      debugger
       song.set('rating', rating);
     }
   }
